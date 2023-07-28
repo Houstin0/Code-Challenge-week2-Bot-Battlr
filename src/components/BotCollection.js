@@ -1,10 +1,10 @@
-import BotCard from "./BotCard"
+import BotCard  from "./BotCard"
 function BotCollection({bots}) {
     return(
         <div>
-            {BroadcastChannel.map((bot)=>{
-                <BotCard bot={bot}/>
-            })}
+           {bots.map((bot)=>
+           <BotCard key={bot.id} bot={bot}/>
+           )}
         </div>
     )
 }
