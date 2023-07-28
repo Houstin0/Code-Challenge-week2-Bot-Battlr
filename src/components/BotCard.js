@@ -1,3 +1,4 @@
+import React from "react"
 function BotCard({bot,buttonText,handleclick}) {
     return (
         <div>

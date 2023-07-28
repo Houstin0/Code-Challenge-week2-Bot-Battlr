@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <YourBotArmy bots={bots} army={army}/>
+      <YourBotArmy bots={bots} army={army} enlistBot={enlistBot}/>
        <BotCollection bots={bots} enlistBot={enlistBot}/>
     </div>
   );
