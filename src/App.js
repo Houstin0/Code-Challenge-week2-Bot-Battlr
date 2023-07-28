@@ -7,7 +7,7 @@ function App() {
   const [army, setArmy]=useState([])
 
   useEffect(()=>{
-    fetch("http://localhost:3000/bots")
+    fetch("https://server-data-7j6w.onrender.com/bots")
     .then((response)=>response.json())
     .then((data)=>setBots(data))
   },[])
@@ -20,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Bot Battlr</h1>
       <YourBotArmy bots={bots} army={army}/>
        <BotCollection bots={bots} enlistBot={enlistBot}/>
     </div>
