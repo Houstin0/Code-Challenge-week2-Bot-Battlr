@@ -1,5 +1,8 @@
 import React from "react"
-function BotCard({bot,buttonText,handleclick}) {
+function BotCard({bot,buttonText,handleClick}) {
+    function handleButtonClick (){
+        handleClick(bot.id)
+    }
     return (
         <div>
             <img src={bot.avatar_url} alt={bot.name}/>
@@ -11,7 +14,7 @@ function BotCard({bot,buttonText,handleclick}) {
             <p>Catchphrase: {bot.catchphrase}</p>
             <p>Created at: {bot.created_at}</p>
             <p>Updated at: {bot.updated_at}</p>
-            <button onClick={handleclick}>{buttonText}</button>
+            <button onClick={handleButtonClick}>{buttonText}</button>
         </div>
     )
 }

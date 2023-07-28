@@ -1,4 +1,3 @@
-import './App.css';
 import React,{useState,useEffect} from 'react';
 import BotCollection from "./components/BotCollection"
 import YourBotArmy from './components/YourBotArmy';
@@ -21,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <YourBotArmy bots={bots} army={army} enlistBot={enlistBot}/>
+      <YourBotArmy bots={bots} army={army}/>
        <BotCollection bots={bots} enlistBot={enlistBot}/>
     </div>
   );

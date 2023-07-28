@@ -1,7 +1,7 @@
 import React from "react"
 import BotCard from "./BotCard"
 
-function YourBotArmy({bots,army,enlistBot}) {
+function YourBotArmy({bots,army}) {
     const armyBots=bots.filter((bot)=> army.includes(bot.id))
 
     return(
@@ -10,7 +10,7 @@ function YourBotArmy({bots,army,enlistBot}) {
             <ul>
             {armyBots.map((bot)=>
               <li key={bot.id}>
-                  <BotCard bot={bot} handleClick={()=>enlistBot(bot.id)} bottonText="Release"/>
+                  <BotCard bot={bot} handleClick={()=>{}} bottonText="Release"/>
               </li>
             )}
             </ul>
