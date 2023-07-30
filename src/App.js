@@ -34,6 +34,12 @@ function handleBackClick(){
   return (
     <div className="App">
       <h1>Bot Battlr</h1>
+      <YourBotArmy 
+          bots={bots} 
+          army={army} 
+          handleDischarge={dischargeBot}
+          />
+          <br></br>
       {selectedBot?(
         <BotSpecs
         bot={selectedBot}
@@ -41,18 +47,11 @@ function handleBackClick(){
         handleEnlist={enlistBot}
         handleBackClick={handleBackClick}
         />):(
-          <>
-          <YourBotArmy 
-          bots={bots} 
-          army={army} 
-          handleDischarge={dischargeBot}
-          />
-        <br></br>
           <BotCollection 
           bots={bots} 
           handleBotClick={handleBotClick}
           />
-          </>
+  
         )}
     </div>
   );
