@@ -7,13 +7,29 @@ function YourBotArmy({bots,army,handleDischarge}) {
     const handleBotClick=(botId)=>{
         handleDischarge(botId)
     }
+
+  const handleDischargeClick = (botId) => {
+    fetch(`https://server-data-7j6w.onrender.com/bots/${botId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Update the army state to remove the discharged bot
+          handleDischarge(botId);
+        } else {
+          console.error('Error deleting bot:', response.status);
+        }
+      })
+      .catch((error) => {
+        console.error('fetch Error deleting bot:', error);
+      });
+  };
     return(
         <>
             <h2>Your Bot Army</h2>
             <Container className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
             {armyBots.map((bot)=>
               <Card key={bot.id} onClick={()=> handleBotClick(bot.id)}>
-        
                   <Card.Img variant="top" src={bot.avatar_url}alt={bot.name}/>
                   <Card.Body>
                   <Card.Title>{bot.name}</Card.Title>
@@ -21,11 +37,7 @@ function YourBotArmy({bots,army,handleDischarge}) {
                   <Card.Text>Health: <i className="bi bi-heart-pulse-fill"></i>{bot.health}</Card.Text>
                   <Card.Text> Damage: <i className="bi bi-heartbreak"></i>{bot.damage}</Card.Text>
                   <Card.Text>Armor: <i className="bi bi-shield-shaded"></i> {bot.armor}</Card.Text>
-                  <Button 
-                  variant="danger" 
-                >
-                  X
-                  </Button>
+                  <Button variant="danger" onClick={() => handleDischargeClick(bot.id)}>X</Button>
                   </Card.Body>
               </Card>
             )}
