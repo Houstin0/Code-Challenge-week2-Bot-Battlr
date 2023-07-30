@@ -1,8 +1,8 @@
-import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import React from 'react'
+import { Button, Card } from 'react-bootstrap'
 
 function BotSpecs ({ bot, army, handleEnlist, handleBackClick,handleDischarge }){
-  const isEnlisted = army.includes(bot.id);
+  const isEnlisted = army.includes(bot.id)
 
   function handleEnlistClick (){
     handleEnlist(bot.id);
@@ -12,7 +12,7 @@ function BotSpecs ({ bot, army, handleEnlist, handleBackClick,handleDischarge })
     <>
       <Card key={bot.id} style={{ maxWidth: '25rem' }} className="my-3">
           {isEnlisted ? (
-            <Button variant="danger" onClick={(botId)=>handleDischarge(botId)}>
+            <Button variant="danger" onClick={()=>handleDischarge(bot.id)}>
               Remove from Army
             </Button>
           ) : (
@@ -34,7 +34,6 @@ function BotSpecs ({ bot, army, handleEnlist, handleBackClick,handleDischarge })
              <Card.Text>Created at: {bot.created_at}</Card.Text>
              <Card.Text>Updated at: {bot.updated_at}</Card.Text>
             </Card.Body>
-     
       </Card>
     </>
   );

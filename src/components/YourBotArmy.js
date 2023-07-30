@@ -1,5 +1,4 @@
 import React from "react"
-
 import { Button,Card, Container } from "react-bootstrap"
 
 function YourBotArmy({bots,army,handleDischarge}) {

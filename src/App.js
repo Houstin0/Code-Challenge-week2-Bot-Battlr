@@ -64,9 +64,6 @@ function sortBots() {
           handleDischarge={dischargeBot}
           />
           <br></br>
-        <SortBar
-        handleSort={handleSort}
-        />
       {selectedBot?(
         <BotSpecs
         bot={selectedBot}
@@ -75,11 +72,15 @@ function sortBots() {
         handleBackClick={handleBackClick}
         handleDischarge={dischargeBot}
         />):(
+          <>
+          <SortBar
+          handleSort={handleSort}
+          />
           <BotCollection 
           bots={sortBots()} 
           handleBotClick={handleBotClick}
           />
-  
+          </>
         )}
     </div>
   );
