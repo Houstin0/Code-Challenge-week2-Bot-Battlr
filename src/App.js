@@ -18,10 +18,14 @@ function App() {
     }
   }
 
+  function dischargeBot(id) {
+    setArmy(army.filter((botId)=>botId!==id))
+  }
+
   return (
     <div className="App">
       <h1>Bot Battlr</h1>
-      <YourBotArmy bots={bots} army={army}/>
+      <YourBotArmy bots={bots} army={army} dischargeBot={dischargeBot}/>
       <br></br>
       <BotCollection bots={bots} enlistBot={enlistBot}/>
     </div>
