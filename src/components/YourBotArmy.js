@@ -24,9 +24,9 @@ function YourBotArmy({bots,army,handleDischarge}) {
       });
   };
     return(
-        <>
+        < >
             <h2>Your Bot Army</h2>
-            <Container className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <Container className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" >
             {armyBots.map((bot)=>
               <Card key={bot.id} onClick={()=> handleBotClick(bot.id)}>
                   <Card.Img variant="top" src={bot.avatar_url}alt={bot.name}/>

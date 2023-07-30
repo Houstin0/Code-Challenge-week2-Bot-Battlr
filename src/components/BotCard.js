@@ -6,7 +6,7 @@ function BotCard({bot,handleClick}) {
         handleClick(bot.id)
     }
     return (
-        <Card className="mb-3" onClick={handleButtonClick}>
+        <Card onClick={handleButtonClick}>
             <Card.Img variant="top" src={bot.avatar_url}alt={bot.name}/>
             <Card.Body>
              <Card.Title>{bot.name}</Card.Title>
