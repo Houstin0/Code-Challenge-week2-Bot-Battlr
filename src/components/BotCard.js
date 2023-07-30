@@ -1,12 +1,12 @@
 import React from "react"
 import { Card,Button } from "react-bootstrap"
 
-function BotCard({bot,buttonText,handleClick}) {
+function BotCard({bot,handleClick}) {
     function handleButtonClick (){
         handleClick(bot.id)
     }
     return (
-        <Card className="mb-3">
+        <Card className="mb-3" onClick={handleButtonClick}>
             <Card.Img variant="top" src={bot.avatar_url}alt={bot.name}/>
             <Card.Body>
             <Card.Title className="card-title">{bot.name}</Card.Title>
@@ -17,7 +17,7 @@ function BotCard({bot,buttonText,handleClick}) {
             <Card.Text>Catchphrase: {bot.catchphrase}</Card.Text>
             <Card.Text>Created at: {bot.created_at}</Card.Text>
             <Card.Text>Updated at: {bot.updated_at}</Card.Text>
-            <Button variant="primary" onClick={handleButtonClick}>{buttonText}</Button>
+            
             </Card.Body>
           
         </Card>
