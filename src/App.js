@@ -11,24 +11,15 @@ function App() {
     .then((response)=>response.json())
     .then((data)=>setBots(data))
   },[])
-
-  // function enlistBot(id) {
-  //   if(!army.includes(id)){
-  //     setArmy([...army,id])
-  //   }
-  // }
-
-  // function dischargeBot(id) {
-  //   setArmy(army.filter((botId)=>botId!==id))
-  // }
-
-  function handleArmySwitch(botId) {
-    if (!army.includes(botId)) {
-      setArmy([...army,botId])
-    }else{
-      setArmy(army.filter((id)=> id !==botId))
-    }
+  
+ function enlistBot(id) {
+  if(!army.includes(id)){
+    setArmy([...army,id])
   }
+ }
+function dischargeBot(id) {
+  setArmy(army.filter((botId)=>botId!==id))
+}
 
   return (
     <div className="App">
@@ -36,12 +27,12 @@ function App() {
       <YourBotArmy 
       bots={bots} 
       army={army} 
-      handleArmySwitch={handleArmySwitch}
+      handleDischarge={dischargeBot}
       />
       <br></br>
       <BotCollection 
       bots={bots} 
-      handleArmySwitch={handleArmySwitch}
+      handleEnlist={enlistBot}
       />
     </div>
   );
