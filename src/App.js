@@ -39,16 +39,21 @@ function handleSort(sortBy) {
 
 
 function sortBots() {
+  let sortedBots;
+
   if (sortBy === 'health') {
-    return [...bots].sort((a, b) => a.health - b.health);
+    sortedBots = [...bots].sort((a, b) => b.health - a.health);
   } else if (sortBy === 'damage') {
-    return [...bots].sort((a, b) => a.damage - b.damage);
+    sortedBots = [...bots].sort((a, b) => b.damage - a.damage);
   } else if (sortBy === 'armor') {
-    return [...bots].sort((a, b) => a.armor - b.armor);
+    sortedBots = [...bots].sort((a, b) => b.armor - a.armor);
   } else {
-    return bots;
+    sortedBots = bots;
   }
+
+  return sortedBots;
 }
+
 
   return (
     <div className="App">
