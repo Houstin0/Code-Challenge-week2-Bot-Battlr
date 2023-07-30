@@ -1,7 +1,7 @@
 import React from "react"
 import BotCard  from "./BotCard"
 import { Container } from "react-bootstrap"
-function BotCollection({bots,handleEnlist}) {
+function BotCollection({bots,handleBotClick}) {
     return(
         <>
         <h2>Bot Collection</h2>
@@ -9,7 +9,7 @@ function BotCollection({bots,handleEnlist}) {
            
             {bots.map((bot)=>
             <div key={bot.id}  className="col mb-3">
-             <BotCard  bot={bot} handleClick={()=>handleEnlist(bot.id)}/>
+             <BotCard  bot={bot} handleClick={()=>handleBotClick(bot.id)}/>
             </div>
            )} 
 

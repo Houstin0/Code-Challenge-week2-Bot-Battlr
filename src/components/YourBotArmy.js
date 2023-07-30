@@ -14,7 +14,6 @@ function YourBotArmy({bots,army,handleDischarge}) {
     })
       .then((response) => {
         if (response.ok) {
-          // Update the army state to remove the discharged bot
           handleDischarge(botId);
         } else {
           console.error('Error deleting bot:', response.status);
@@ -34,9 +33,9 @@ function YourBotArmy({bots,army,handleDischarge}) {
                   <Card.Body>
                   <Card.Title>{bot.name}</Card.Title>
                   <Card.Subtitle>Class: {bot.bot_class}</Card.Subtitle>
-                  <Card.Text>Health: <i className="bi bi-heart-pulse-fill"></i>{bot.health}</Card.Text>
-                  <Card.Text> Damage: <i className="bi bi-heartbreak"></i>{bot.damage}</Card.Text>
-                  <Card.Text>Armor: <i className="bi bi-shield-shaded"></i> {bot.armor}</Card.Text>
+                  <Card.Text>Health: <i className="bi bi-heart-pulse-fill"/> : {bot.health}</Card.Text>
+                  <Card.Text> Damage: <i className="bi bi-heartbreak"/> : {bot.damage}</Card.Text>
+                  <Card.Text>Armor: <i className="bi bi-shield-shaded"/> : {bot.armor}</Card.Text>
                   <Button variant="danger" onClick={() => handleDischargeClick(bot.id)}>X</Button>
                   </Card.Body>
               </Card>
