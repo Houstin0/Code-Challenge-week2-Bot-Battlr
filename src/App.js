@@ -22,7 +22,8 @@ function App() {
     <div className="App">
       <h1>Bot Battlr</h1>
       <YourBotArmy bots={bots} army={army}/>
-       <BotCollection bots={bots} enlistBot={enlistBot}/>
+      <br></br>
+      <BotCollection bots={bots} enlistBot={enlistBot}/>
     </div>
   );
 }
