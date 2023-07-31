@@ -2,7 +2,7 @@
 # Description
 Bot Battlr is a mini web app built with React that lets you to browse through a list of robots and view their details. You can create and manage your custom Bot Army. You can then enlist bots into your army and release them if needed.
 # Project Setup
-
+You can view the app by following the url:houstinbotbattlr.netlify.app/ in your browser or
 Follow these steps to set up and run the bot battlr App on your local machine:
 
 Clone the Repository: Clone this repository to your local machine.
